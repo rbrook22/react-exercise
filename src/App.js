@@ -1,13 +1,14 @@
 import React from 'react';
+import Counter from './Counter';
 
 const App = () => {
   return (
     <div className="container">
       <button>CLICK ME!</button>
       <div className="counter-box">
-        <div className="counter">3</div>
-        <div className="counter">1</div>
-        <div className="counter">1</div>
+        <Counter initialValue="42"/>
+        <Counter initialValue="24"/>
+        <Counter initialValue="34"/>
       </div>
     </div>
 
