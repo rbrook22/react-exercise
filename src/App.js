@@ -1,9 +1,9 @@
 import React from 'react';
 import Counter from './Counter';
 
-const handleClick= () => {
-  console.log('haaaayyyy');
-};
+// const handleClick= () => {
+//   console.log('haaaayyyy');
+// };
 
 function converNumToCounter(value) {
   return (
@@ -18,13 +18,21 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      counterValues: [42, 3, 18, 29, 86, 2]
+      counterValues: [3,11,12]
     };
   }
+
+  _handleClick = () => {
+    console.log('haaaayyyy yoooooooo');
+    this.setState({
+      counterValues: this.state.counterValues.concat(0)
+    });
+  }
+
   render() {
     return (
       <div className="container">
-        <button onClick={handleClick}>CLICK ME!</button>
+        <button onClick={this._handleClick}>CLICK ME!</button>
         <div className="counter-box">
           {this.state.counterValues.map(converNumToCounter)}
         </div>
