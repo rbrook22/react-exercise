@@ -5,9 +5,9 @@ import Counter from './Counter';
 //   console.log('haaaayyyy');
 // };
 
-function converNumToCounter(value) {
+function converNumToCounter(obj) {
   return (
-    <Counter initialValue={value} />
+    <Counter key={obj.id} initialValue={obj.value} />
   );
 }
 // NOt quite the react way
@@ -18,14 +18,17 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      counterValues: [3,11,12]
+      counterValues: [{id: 54321, value: 33}]
     };
   }
 
   _handleClick = () => {
-    console.log('haaaayyyy yoooooooo');
+    let newObj = {
+      id: (new Date()).getTime(), 
+      value: 0
+    };
     this.setState({
-      counterValues: this.state.counterValues.concat(0)
+      counterValues: this.state.counterValues.concat(newObj)
     });
   }
 
