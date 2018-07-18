@@ -1,14 +1,26 @@
 import React from 'react';
 import Counter from './Counter';
 
+const handleClick= () => {
+  console.log('haaaayyyy');
+};
+
+function converNumToCounter(value) {
+  return (
+    <Counter initialValue={value} />
+  );
+}
+// NOt quite the react way
+let counterValues=[42, 3, 18, 29, 86, 2];
+let counterElements = counterValues.map(converNumToCounter);
+
+
 const App = () => {
   return (
     <div className="container">
-      <button>CLICK ME!</button>
+      <button onClick={handleClick}>CLICK ME!</button>
       <div className="counter-box">
-        <Counter initialValue="42"/>
-        <Counter initialValue="24"/>
-        <Counter initialValue="34"/>
+        {counterElements}
       </div>
     </div>
 
